@@ -11,7 +11,7 @@ namespace rnd
         /// <summary>
         /// If the length is larger than or equal to this, the program will use all cpu threads to calculate the string
         /// </summary>
-        public static int multiThreadedLength = 2;
+        public static int multiThreadedLength = 15000;
 
         public static string s_MakeString(int length, char[] characterSet)
         {
