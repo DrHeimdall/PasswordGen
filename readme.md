@@ -2,6 +2,8 @@
 
 This program is intended as a command line utility. It has a few quirky features and could maybe be useful to you if you have a unix or unix-like os.
 
+Disclaimer: This was a really quick project that took like 20 minuets, I probably won't update it.
+
 ## Arguments and Usage
 
 ```
