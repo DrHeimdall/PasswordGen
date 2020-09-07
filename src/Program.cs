@@ -51,7 +51,7 @@ namespace rnd
             {
                 for (int i = 0; i < strings.Length; i++)
                 {
-                    Console.Write(((i != 0) ? ", " : "") + strings[i]);
+                    Console.Write(((i != 0) ? "," : "") + strings[i]);
                 }
 
                 Console.Write("\n");
@@ -92,6 +92,8 @@ namespace rnd
                     }
                 }
             }
+
+            if (forBash) { human = true; }
 
             return 0;
         }
