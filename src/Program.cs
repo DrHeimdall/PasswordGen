@@ -51,8 +51,10 @@ namespace rnd
             {
                 for (int i = 0; i < strings.Length; i++)
                 {
-                    Console.WriteLine(strings[i] + ",");
+                    Console.Write(((i != 0) ? ", " : "") + strings[i]);
                 }
+
+                Console.Write("\n");
 
                 return;
             }
