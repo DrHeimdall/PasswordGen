@@ -16,7 +16,7 @@ Prints a random sequence of characters of length len
 
 You can generate many different passwords by giving multiple lengths. They will all use different secure-random seeds.
 
-E.G.
+### Example Usage
 
 ```
 $ rnd 15 15 15
@@ -31,6 +31,28 @@ Calculated in 0.0036509 seconds
 Password #1: QlyqLPLT9WG6NKn
 Password #2: qwGFo6HooYR7zdR
 Password #3: R3UvvCPWCKyA3PB
+```
+
+```
+$ rnd 15 -c -h 30 5 3
+YbMZfaGwpgWaSQu,kvg0LiQVfLROhFPG9GRHjpWULbCkVv,FO3xU,DMS
+```
+
+```
+$ rnd -c -h -t 15
+0.0036382
+Zd7i8ASbrHRr85U
+```
+
+```
+$ rnd 3 10 -c 5 3
+Jc9,x2vwbno6aV,dpRfo,4jb
+```
+
+```
+$ rnd 3 10 -c 5 -t 3
+0.0036441
+8L3,aowD2UQKbr,3mokA,5WE
 ```
 
 ## Multi-threaded
