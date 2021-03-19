@@ -17,13 +17,11 @@ namespace rnd
             // For testing
             // args = new string[2]{"-t", "15000"};
 
-            bool human = false;
-            bool forBash = false;
-            bool printTime = false;
+            bool human = false, forBash = false, printTime = false;
 
             List<int> lengths = new List<int>();
 
-            if (s_ProcessArgs(args, ref human, ref forBash, ref printTime, ref lengths) != 0) return 1;
+            if (ProcessArgs(args, ref human, ref forBash, ref printTime, ref lengths) != 0) return 1;
 
             DateTime start = DateTime.UtcNow;
 
@@ -40,12 +38,12 @@ namespace rnd
             if (printTime && !forBash) Console.WriteLine($"Calculated in {duration.TotalSeconds} seconds");
             if (printTime && forBash) Console.WriteLine(duration.TotalSeconds);
 
-            s_PrintStrings(strings, forBash);
+            PrintStrings(strings, forBash);
 
             return 0;
         }
 
-        static void s_PrintStrings(string[] strings, bool forBash)
+        static void PrintStrings(string[] strings, bool forBash)
         {
             if (forBash)
             {
@@ -65,11 +63,11 @@ namespace rnd
             }
         }
 
-        static int s_ProcessArgs(string[] args, ref bool human, ref bool forBash, ref bool printTime, ref List<int> lengths)
+        static int ProcessArgs(string[] args, ref bool human, ref bool forBash, ref bool printTime, ref List<int> lengths)
         {
             if (args.Length == 0)
             {
-                s_PrintHelp();
+                PrintHelp();
                 return 1;
             }
 
@@ -88,7 +86,7 @@ namespace rnd
                     }
                     catch
                     {
-                        return s_NoParseError(i);
+                        return NoParseError(i);
                     }
                 }
             }
@@ -98,19 +96,19 @@ namespace rnd
             return 0;
         }
 
-        static void s_PrintHelp()
+        static void PrintHelp()
         {
             Console.WriteLine($"rnd [-h] [-t] [-c] len\nPrints a random sequence of characters of length len\nUses \"{SafeChars}\" with -h and \"{ComplexChars}\" without\n  -t prints the time taken for just the string to generate in seconds\n  -c prints just the string of characters and nothing else, usefull if using in a bash script\nThe program will print a random string for every length measurement given (e.g. rnd 156 65 23 will print 3 strings of respective length)");
         }
 
-        static int s_NoParseError(int argNo)
+        static int NoParseError(int argNo)
         {
-            Console.WriteLine($"The {LangNumber(argNo + 1)} argument was not a parsable interger number");
+            Console.WriteLine($"The {LangNumber(argNo + 1)} argument was not a parsable integer number");
 
             return 1;
         }
 
-        static int s_BadNumberError(int argNo)
+        static int BadNumberError(int argNo)
         {
             Console.WriteLine($"The {LangNumber(argNo + 1)} argument was an invalid number.\nThe length of the string must be above 1");
 
