@@ -19,13 +19,17 @@ namespace rnd
 
             int lastNumber = no % 10;
 
-            if (lastNumber == 1) return $"{no}st";
-
-            if (lastNumber == 2) return $"{no}nd";
-
-            if (lastNumber == 3) return $"{no}rd";
-
-            return $"{no}th";
+            switch (lastNumber)
+            {
+                case 1:
+                    return $"{no}st";
+                case 2:
+                    return $"{no}nd";
+                case 3:
+                    return $"{no}rd";
+                default:
+                    return $"{no}th";
+            }
         }
     }
 }
