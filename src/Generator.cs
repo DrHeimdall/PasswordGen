@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using System.Collections.Generic;
 
 using static rnd.NumberPhonet;
@@ -306,6 +307,34 @@ namespace rnd
 
                 return output;
             }
+        }
+
+        public void PrintStrings(string[] strings)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            if (Options.ForBash)
+            {
+                for (int i = 0; i < strings.Length; i++)
+                {
+                    sb.Append(((i != 0) ? "," : "") + strings[i]);
+                }
+
+                Console.WriteLine(sb.ToString());
+
+                return;
+            }
+
+            for (int i = 0; i < strings.Length; i++)
+            {
+                // It's nicer to not have 2 for loops,
+                // even if it is a few cycles slower
+                if (Options.Number) sb.AppendLine("Number #" + (i + 1) + ": " + strings[i]);
+                else sb.AppendLine("Password #" + (i + 1) + ": " + strings[i]);
+            }
+
+            // Not write line bc we already have a trailing \n
+            Console.Write(sb.ToString());
         }
 
         protected static void BadUshortFeedback(int argNo)
