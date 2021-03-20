@@ -11,7 +11,7 @@ rnd [-h] [-t] [-c] len [len2...]
 Prints a random sequence of characters of length len
   -t prints the time taken in seconds
   -c prints just the string of characters and nothing else, usefull if using in a bash script
-  -h The algorithm only selects only characters from the alphabet and latin numerical characters (1,2,3,4 etc)
+  -h The algorithm only selects only characters from the alphabet and Arabic numerals (1,2,3,4 etc)
 ```
 
 You can generate many different passwords by giving multiple lengths. They will all use different secure-random seeds.
