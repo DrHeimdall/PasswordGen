@@ -12,7 +12,7 @@ namespace rnd
         static void Main(string[] args)
         {
             // For testing
-            args = new string[]{"-n", "2.5^8", "-t"};
+            // args = new string[]{"-n", "2.5^8", "-t"};
 
             if (args.Length == 0 || args.Contains("-h") || args.Contains("help")) { PrintHelp(); return; }
 
