@@ -1,8 +1,8 @@
-name: .NET
+name: .NET Publish
 
 on:
   push:
-    branches: [ release/* ]
+    tags: [ release/* ]
 
 jobs:
   build:
