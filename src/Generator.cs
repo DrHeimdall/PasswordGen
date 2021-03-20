@@ -309,9 +309,13 @@ namespace rnd
             }
         }
 
-        public void PrintStrings(string[] strings)
+        public void PrintStrings(string[] strings, TimeSpan timeTaken)
         {
             StringBuilder sb = new StringBuilder();
+
+            // If we need to print the time taken, do it
+            if (Options.PrintTime && !Options.ForBash) sb.AppendLine($"Calculated in {timeTaken.TotalSeconds} seconds");
+            if (Options.PrintTime && Options.ForBash) sb.AppendLine(timeTaken.TotalSeconds.ToString());
 
             if (Options.ForBash)
             {

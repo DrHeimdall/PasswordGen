@@ -12,7 +12,7 @@ namespace rnd
         static void Main(string[] args)
         {
             // For testing
-            args = new string[]{"-n", "2.5^8", "-h"};
+            args = new string[]{"-n", "2.5^8", "-t"};
 
             if (args.Length == 0 || args.Contains("-h") || args.Contains("help")) { PrintHelp(); return; }
 
@@ -35,13 +35,11 @@ namespace rnd
                 return;
             }
 
-
-
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
-
+            // I'm annoyed that I used a tuple here
+            // I'll get rid of it when I revisit this program in a years time...
             (TimeSpan, bool) timeTaken;
 
-            gen.PrintStrings(gen.GenerateAuto(out timeTaken));
+            gen.PrintStrings(gen.GenerateAuto(out timeTaken), timeTaken.Item1);
         }
 
         static void PrintHelp()
