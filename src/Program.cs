@@ -12,7 +12,7 @@ namespace rnd
         static void Main(string[] args)
         {
             // For testing
-            args = new string[]{"-h", "30"};
+            // args = new string[]{"-h", "30"};
 
             if (args.Length == 0 || args.Contains("help")) { PrintHelp(); return; }
 
