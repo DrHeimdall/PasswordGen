@@ -321,7 +321,7 @@ namespace rnd
                     sb.Append(((i != 0) ? ((Options.Newline)? '\n' : ',') : "") + strings[i]);
                 }
 
-                Console.Write(sb.ToString());
+                Console.WriteLine(sb.ToString());
 
                 return;
             }
