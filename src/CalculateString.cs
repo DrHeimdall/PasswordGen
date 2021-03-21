@@ -171,7 +171,7 @@ namespace rnd
                 double swap = min; min = max; max = swap;
             }
 
-            return (min + (rnd.NextDouble() * max)).ToString();
+            return (min + (rnd.NextDouble() * (max + min))).ToString();
         }
 
         #endregion
