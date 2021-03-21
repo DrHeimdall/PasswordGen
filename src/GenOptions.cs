@@ -12,6 +12,7 @@ namespace rnd
         
         public bool Human;
         public bool Number;
+        public bool Newline;
         public bool ForBash;
         public bool PrintTime;
 
@@ -72,6 +73,8 @@ namespace rnd
                         this.Human = true; break;
                     case 'n':
                         this.Number = true; break;
+                    case 'l':
+                        this.Newline = true; break;
                     case 'c':
                         this.ForBash = true; goto case 'h'; // Make the forBash always flag human
                     case 't':

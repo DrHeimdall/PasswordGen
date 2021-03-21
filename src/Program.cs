@@ -61,6 +61,7 @@ namespace rnd
             sb.AppendLine($"    {Generator.ComplexChars}\n");
             sb.AppendLine("  -t Prints the amount of time taken to fulfil the request");
             sb.AppendLine("  -c Prints in bash mode with a user-unfriendly output");
+            sb.AppendLine("  -l Uses newlines to separate data rather than , in bash mode");
             sb.AppendLine("  -n Puts the generator in number mode");
             sb.AppendLine("    -h is ignored in number mode, obviously");
 
