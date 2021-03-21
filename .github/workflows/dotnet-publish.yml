@@ -2,7 +2,7 @@ name: .net Publish
 
 on:
   push:
-    tags: [ "release/*" ]
+    tags: [ "*" ]
   workflow_dispatch:
   
 jobs:
