@@ -61,7 +61,7 @@ jobs:
     - name: Rename osx releases
       run: mv ./publish/osx/rnd ./publish/osx/rnd-osx && mv ./publish/osx-contained/rnd ./publish/osx-contained/rnd-osx-contained
     - name: Rename windows releases
-      run: mv ./publish/win64/rnd.exe ./publish/win64/rnd-win64.exe && mv ./publish/win64-contained/rnd.exe ./publish/win64-contained/rnd-win64-contained.exe
+      run: mv ./publish/W64/rnd.exe ./publish/W64/rnd-win64.exe && mv ./publish/W64-contained/rnd.exe ./publish/W64-contained/rnd-win64-contained.exe
     
     # Upload the published files to the release
     - name: Upload Release
