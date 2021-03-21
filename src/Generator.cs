@@ -240,7 +240,7 @@ namespace rnd
 
             // Is it badly formatted?
             fail = !decimal.TryParse(parts[0], out baseNumber);
-            if (baseNumber >= 10 || baseNumber < 1) fail = true;
+            if (baseNumber >= 10 || baseNumber <= -10) fail = true;
             if (fail) { InvalidBaseFeedback(val.Item2); throw new Exception(); }
 
             double k = Math.Pow(10, exponent);
