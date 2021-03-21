@@ -4,7 +4,15 @@ This program is intended as a command line utility. It has a few quirky features
 
 Disclaimer: This was a really quick project that took like 20 minuets, I probably won't update it.
 
-## Arguments and Usage
+
+## Multi-threaded
+
+Yes, you read that correctly. There really is no point to this because to generate intMax characters would only take approx 9.21 seconds on my computer (then like 10 years to print those characters to the console lol). Any strings less than 15000 characters will use single-threaded mode.
+
+I only did this because I wanted to refresh my knowledge of how to do that stuff.
+
+
+# Arguments and Usage
 
 ```
 rnd [help] [-h] [-t] [-c] [-n] <<len...> or <max> or <min max...>>
@@ -34,15 +42,7 @@ Arguments:
 
 You can generate many different passwords by giving multiple lengths. They will all use different secure-random seeds.
 
-
-## Multi-threaded
-
-Yes, you read that correctly. There really is no point to this because to generate intMax characters would only take approx 9.21 seconds on my computer (then like 10 years to print those characters to the console lol). Any strings less than 15000 characters will use single-threaded mode.
-
-I only did this because I wanted to refresh my knowledge of how to do that stuff.
-
-
-### Example Usage
+## Example Usage
 
 ```
 $ rnd 15 15 15
