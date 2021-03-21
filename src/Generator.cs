@@ -266,7 +266,8 @@ namespace rnd
                 double baseVal = double.Parse(parts[0]);
                 double power = double.Parse(parts[1]);
 
-                return Math.Pow(baseVal, power);
+                // Let users defy maths because it's usefull here
+                return (val.Item1.StartsWith('-'))? -Math.Pow(baseVal, power) : Math.Pow(baseVal, power);
             }
             catch (System.Exception)
             {
@@ -317,7 +318,7 @@ namespace rnd
             {
                 for (int i = 0; i < strings.Length; i++)
                 {
-                    sb.Append(((i != 0) ? "," : "") + strings[i]);
+                    sb.Append(((i != 0) ? ((Options.Newline)? '\n' : ',') : "") + strings[i]);
                 }
 
                 Console.Write(sb.ToString());
