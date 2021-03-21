@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 using static rnd.NumberPhonet;
 
@@ -7,6 +8,8 @@ namespace rnd
 {
     class GenOptions
     {
+        private static Regex argRegex = new Regex(@"-\D");
+        
         public bool Human;
         public bool Number;
         public bool ForBash;
@@ -40,8 +43,8 @@ namespace rnd
             // Sort the arguments with - first
             sortedArgs.Sort((a, b) =>
             {
-                int aVal = (a.arg.StartsWith('-') ? -a.index : a.index);
-                int bVal = (b.arg.StartsWith('-') ? -b.index : b.index);
+                int aVal = (argRegex.IsMatch(a.arg) ? -a.index : a.index);
+                int bVal = (argRegex.IsMatch(b.arg) ? -b.index : b.index);
 
                 return aVal - bVal;
             });
@@ -57,7 +60,7 @@ namespace rnd
             while (args.Count != 0)
             {
                 // If we're at the end of the '-' arguments, skip to the next loop
-                if (!args.Peek().arg.StartsWith('-')) break;
+                if (!argRegex.IsMatch(args.Peek().arg)) break;
 
                 // Dequeue the arg we're dealing with
                 (string arg, int) arg = args.Dequeue();
