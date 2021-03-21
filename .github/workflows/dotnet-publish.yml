@@ -70,16 +70,16 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          ./publush/L64/rnd-linux-64
-          ./publush/Larm/rnd-linux-arm
-          ./publush/Larm64/rnd-linux-arm64
-          ./publush/L64-contained/rnd-linux64-contained
-          ./publush/Larm-contained/rnd-linux-arm-contained
-          ./publush/Larm64-contained/rnd-linux-arm64-contained
-          ./publush/osx/rnd-osx
-          ./publush/osx-contained/rnd-osx-contained
-          ./publush/win64/rnd-win64.exe
-          ./publush/win64-contained/rnd-win64-contained.exe
+          publush/L64/rnd-linux-64
+          publush/Larm/rnd-linux-arm
+          publush/Larm64/rnd-linux-arm64
+          publush/L64-contained/rnd-linux64-contained
+          publush/Larm-contained/rnd-linux-arm-contained
+          publush/Larm64-contained/rnd-linux-arm64-contained
+          publush/osx/rnd-osx
+          publush/osx-contained/rnd-osx-contained
+          publush/win64/rnd-win64.exe
+          publush/win64-contained/rnd-win64-contained.exe
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
