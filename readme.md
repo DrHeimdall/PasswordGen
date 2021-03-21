@@ -29,7 +29,6 @@ Arguments:
   -c Prints in bash mode with a user-unfriendly output
   -n Puts the generator in number mode
     -h is ignored in number mode, obviously
-
 ```
 
 You can generate many different passwords by giving multiple lengths. They will all use different secure-random seeds.
