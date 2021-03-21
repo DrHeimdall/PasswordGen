@@ -354,7 +354,7 @@ namespace rnd
 
         protected static void InvalidBaseFeedback(int argNo)
         {
-            Console.WriteLine($"The base value in the {LangNumber(argNo + 1)} argument was not valid. It must be a number lower than 10 and greater than or equal to 1");
+            Console.WriteLine($"The base value in the {LangNumber(argNo + 1)} argument was not valid. It must be a number lower than 10 and greater than -10");
         }
 
         protected static void BadNumberFeedback(int argNo)
