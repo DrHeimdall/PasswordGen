@@ -320,7 +320,7 @@ namespace rnd
                     sb.Append(((i != 0) ? "," : "") + strings[i]);
                 }
 
-                Console.WriteLine(sb.ToString());
+                Console.Write(sb.ToString());
 
                 return;
             }
