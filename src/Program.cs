@@ -30,15 +30,14 @@ namespace rnd
             {
                 Console.WriteLine("Program Failed");
                 Console.WriteLine("Run without args or with arg \"help\" to get help");
-                
+
                 return;
             }
 
-            // I'm annoyed that I used a tuple here
-            // I'll get rid of it when I revisit this program in a years time...
-            (TimeSpan, bool) timeTaken;
+            // Get the time taken to compute the "password(s)" or random numbers
+            TimeSpan timeTaken;
 
-            gen.PrintStrings(gen.GenerateAuto(out timeTaken), timeTaken.Item1);
+            gen.PrintStrings(gen.GenerateAuto(out timeTaken), timeTaken);
         }
 
         static void PrintHelp()

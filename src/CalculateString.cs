@@ -158,7 +158,7 @@ namespace rnd
             rnd.NextBytes(bytes);
             long rand = BitConverter.ToInt64(bytes);
 
-            return (Math.Abs(rand % ((max - min) + ((max != long.MaxValue)? 1 : 0))) + min).ToString();
+            return (Math.Abs(rand % ((max - min) + ((max != long.MaxValue) ? 1 : 0))) + min).ToString();
         }
 
         /// <summary>

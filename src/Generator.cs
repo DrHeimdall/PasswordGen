@@ -36,10 +36,10 @@ namespace rnd
         public string[] GeneratePasswords(out TimeSpan timeTaken)
         {
             // Choose what characters to make the password from
-            char[] characterSet = (Options.Human)? SafeChars.ToCharArray() : ComplexChars.ToCharArray();
+            char[] characterSet = (Options.Human) ? SafeChars.ToCharArray() : ComplexChars.ToCharArray();
 
             string[] passwords = new string[Lengths.Count];
-            
+
             DateTime start = DateTime.UtcNow;
 
             for (int i = 0; i < Lengths.Count; i++)
@@ -58,7 +58,7 @@ namespace rnd
         public string[] GenerateNumbers(out TimeSpan timeTaken)
         {
             string[] numbers;
-            
+
             DateTime start = DateTime.UtcNow;
 
             if (Lengths.Count % 2 == 0)
@@ -66,7 +66,7 @@ namespace rnd
                 numbers = new string[Lengths.Count / 2];
                 Queue<object> lengthsQueue = new Queue<object>(Lengths);
 
-                
+
                 for (int i = 0; i < numbers.Length; i++)
                 {
                     numbers[i] = MakeNumber(lengthsQueue.Dequeue(), lengthsQueue.Dequeue());
@@ -74,7 +74,7 @@ namespace rnd
             }
             else
             {
-                numbers = new string[1]{MakeNumber(Lengths[0], Lengths[1])};
+                numbers = new string[1] { MakeNumber(Lengths[0], Lengths[1]) };
             }
 
             DateTime end = DateTime.UtcNow;
@@ -84,13 +84,9 @@ namespace rnd
             return numbers;
         }
 
-        public string[] GenerateAuto(out (TimeSpan, bool) timeTaken)
+        public string[] GenerateAuto(out TimeSpan time)
         {
-            TimeSpan time;            
-            
             string[] res = (Options.Number) ? GenerateNumbers(out time) : GeneratePasswords(out time);
-
-            timeTaken = (time, Options.PrintTime);
 
             return res;
         }
@@ -269,7 +265,7 @@ namespace rnd
             {
                 double baseVal = double.Parse(parts[0]);
                 double power = double.Parse(parts[1]);
-                
+
                 return Math.Pow(baseVal, power);
             }
             catch (System.Exception)
