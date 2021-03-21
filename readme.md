@@ -7,11 +7,29 @@ Disclaimer: This was a really quick project that took like 20 minuets, I probabl
 ## Arguments and Usage
 
 ```
-rnd [-h] [-t] [-c] len [len2...]
-Prints a random sequence of characters of length len
-  -t prints the time taken in seconds
-  -c prints just the string of characters and nothing else, usefull if using in a bash script
-  -h The algorithm only selects only characters from the alphabet and Arabic numerals (1,2,3,4 etc)
+rnd [help] [-h] [-t] [-c] [-n] <<len...> or <max> or <min max...>>
+
+Prints random sequence(s) of characters of length len
+Or if in number mode prints a random number between
+min and max inclusive. If a single number is given, min is 0
+
+Numbers can be integer or decimal, or in the format of
+  - x^y x and y can be decimal or integer. Returns a decimal
+  - xEy x can be either but y is integer. Returns a decimal
+  - If either min or max is decimal the result will be too
+
+Arguments:
+  -h Prints human characters (easily typed ones)
+    -h uses:
+    qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789
+    default uses:
+    qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789!"£$%^&*()-_=+[]{}#~`¬|\<>,.?/™
+
+  -t Prints the amount of time taken to fulfil the request
+  -c Prints in bash mode with a user-unfriendly output
+  -n Puts the generator in number mode
+    -h is ignored in number mode, obviously
+
 ```
 
 You can generate many different passwords by giving multiple lengths. They will all use different secure-random seeds.
