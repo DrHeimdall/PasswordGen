@@ -27,11 +27,20 @@ Arguments:
 
   -t Prints the amount of time taken to fulfil the request
   -c Prints in bash mode with a user-unfriendly output
+  -l Uses newlines to separate data rather than , in bash mode
   -n Puts the generator in number mode
     -h is ignored in number mode, obviously
 ```
 
 You can generate many different passwords by giving multiple lengths. They will all use different secure-random seeds.
+
+
+## Multi-threaded
+
+Yes, you read that correctly. There really is no point to this because to generate intMax characters would only take approx 9.21 seconds on my computer (then like 10 years to print those characters to the console lol). Any strings less than 15000 characters will use single-threaded mode.
+
+I only did this because I wanted to refresh my knowledge of how to do that stuff.
+
 
 ### Example Usage
 
@@ -56,24 +65,41 @@ YbMZfaGwpgWaSQu,kvg0LiQVfLROhFPG9GRHjpWULbCkVv,FO3xU,DMS
 ```
 
 ```
+$ rnd 15 15 -l -c -h
+JulCBdiuLZrMKRu
+Zu27riHVU8ub9kL
+```
+
+```
 $ rnd -c -h -t 15
 0.0036382
 Zd7i8ASbrHRr85U
 ```
 
 ```
-$ rnd 3 10 -c 5 3
-Jc9,x2vwbno6aV,dpRfo,4jb
+$ rnd -n 1
+Number #1: 1
 ```
 
 ```
-$ rnd 3 10 -c 5 -t 3
-0.0036441
-8L3,aowD2UQKbr,3mokA,5WE
+$ rnd -n 0 1.0 0 1. 0 1
+Number #1: 0.177324498620501
+Number #2: 0.6010764365089482
+Number #3: 1
 ```
 
-## Multi-threaded
+```
+$ rnd -n 2^8 -c
+157.02965159575905
+```
 
-Yes, you read that correctly. There really is no point to this because to generate intMax characters would only take approx 9.21 seconds on my computer (then like 10 years to print those characters to the console lol). Any strings less than 15000 characters will use single-threaded mode.
+```
+# When there is a minus sign in front of a power, it makes it negative
+$ rnd -n 2^8 -2^48
+Number #1: -205186374661365.94
+```
 
-I only did this because I wanted to refresh my knowledge of how to do that stuff.
+```
+$ rnd -n 1E8
+Number #1: 10408261.050660284
+```
