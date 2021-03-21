@@ -65,7 +65,7 @@ namespace rnd
             sb.AppendLine("  -n Puts the generator in number mode");
             sb.AppendLine("    -h is ignored in number mode, obviously");
 
-            Console.WriteLine(sb.ToString());
+            Console.Write(sb.ToString());
         }
     }
 }
