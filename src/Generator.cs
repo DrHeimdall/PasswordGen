@@ -192,7 +192,7 @@ namespace rnd
                 case "0":
                     return 0L;
                 case "1":
-                    return 1D;
+                    return 1L;
                 default:
                     return ParseNumber(val);
             }
