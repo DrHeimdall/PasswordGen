@@ -1,8 +1,7 @@
 ﻿using System;
+using System.Text;
 using System.Linq;
 using System.Collections.Generic;
-
-using static rnd.NumberPhonet;
 
 
 namespace rnd
@@ -44,7 +43,29 @@ namespace rnd
 
         static void PrintHelp()
         {
-            Console.WriteLine($"rnd [-h] [-t] [-c] [-n] len\nPrints a random sequence of characters of length len\nUses \"{Generator.SafeChars}\" with -h and \"{Generator.ComplexChars}\" without\n  -t prints the time taken for just the string to generate in seconds\n  -c prints just the string of characters and nothing else, usefull if using in a bash script\nThe program will print a random string for every length measurement given (e.g. rnd 156 65 23 will print 3 strings of respective length)\n  -n Puts the program in number mode. Len can be a single value or any number of multiples of two (i.e. 2 or 2 4 4 8) with each representing a min and max for a random generator. Numbers can be integer (processed as 64 bit int) or they can be powers (e.g. 2^8 3^0.3333) (processed as 64 bit fp) or exponents (e.g. 5E8 2.64E80) (processed as 64 bit fp)");
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("rnd [help] [-h] [-t] [-c] [-n] <<len...> or <max> or <min max...>>\n");
+
+            sb.AppendLine("Prints random sequence(s) of characters of length len");
+            sb.AppendLine("Or if in number mode prints a random number between");
+            sb.AppendLine("min and max inclusive. If a single number is given, min is 0\n");
+            sb.AppendLine("Numbers can be integer or decimal, or in the format of");
+            sb.AppendLine("  - x^y x and y can be decimal or integer. Returns a decimal");
+            sb.AppendLine("  - xEy x can be either but y is integer. Returns a decimal");
+            sb.AppendLine("  - If either min or max is decimal the result will be too\n");
+            sb.AppendLine("Arguments:");
+            sb.AppendLine("  -h Prints human characters (easily typed ones)");
+            sb.AppendLine($"    -h uses:");
+            sb.AppendLine($"    {Generator.SafeChars}");
+            sb.AppendLine($"    default uses:");
+            sb.AppendLine($"    {Generator.ComplexChars}\n");
+            sb.AppendLine("  -t Prints the amount of time taken to forfill the request");
+            sb.AppendLine("  -c Prints in bash mode with a user-unfriendly output");
+            sb.AppendLine("  -n Puts the generator in number mode");
+            sb.AppendLine("    -h is ignored in number mode, obviously");
+
+            Console.WriteLine(sb.ToString());
         }
     }
 }
