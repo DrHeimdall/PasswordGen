@@ -2,12 +2,10 @@
 
 This program is intended as a command line utility. It has a few quirky features and could maybe be useful to you if you have a unix or unix-like os.
 
-Disclaimer: This was a really quick project that took like 20 minuets, I probably won't update it.
-
 
 ## Multi-threaded
 
-Yes, you read that correctly. There really is no point to this because to generate intMax characters would only take approx 9.21 seconds on my computer (then like 10 years to print those characters to the console lol). Any strings less than 15000 characters will use single-threaded mode.
+There really is no point to this because to generate intMax characters takes approx 9.21 seconds on my computer (then like 10 years to print those characters to the console lol). Any strings less than 15000 characters will use single-threaded mode.
 
 I only did this because I wanted to refresh my knowledge of how to do that stuff.
 
@@ -21,7 +19,7 @@ Prints random sequence(s) of characters of length len
 Or if in number mode prints a random number between
 min and max inclusive. If a single number is given, min is 0
 
-Numbers can be integer or decimal, or in the format of
+Numbers can be integral or decimal, or in the format of
   - x^y x and y can be decimal or integer. Returns a decimal
   - xEy x can be either but y is integer. Returns a decimal
   - If either min or max is decimal the result will be too
@@ -37,10 +35,10 @@ Arguments:
   -c Prints in bash mode with a user-unfriendly output
   -l Uses newlines to separate data rather than , in bash mode
   -n Puts the generator in number mode
-    -h is ignored in number mode, obviously
+    -h is ignored in number mode
 ```
 
-You can generate many different passwords by giving multiple lengths. They will all use different secure-random seeds.
+You can generate many different passwords by giving multiple lengths. They will individually use different secure-random seeds.
 
 ## Example Usage
 
